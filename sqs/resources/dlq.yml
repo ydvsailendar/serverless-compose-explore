@@ -1,0 +1,8 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Resources: 
+  DeadLetterQueue: 
+    Type: AWS::SQS::Queue
+
+Outputs:
+  DeadLetterQueueArn:
+    Value: !GetAtt DeadLetterQueue.Arn

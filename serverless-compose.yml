@@ -1,0 +1,15 @@
+	
+services:
+  sqs:
+    path: sqs
+
+# specify explicit dependencies without variables via the dependsOn option
+  sns:
+    path: sns
+    dependsOn:
+      - sqs
+    params:
+      queueArn: ${sqs.SQSQueueArn}
+ 
+  go:
+    path: go

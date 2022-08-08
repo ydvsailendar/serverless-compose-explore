@@ -1,0 +1,10 @@
+service: sns
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  stage: dev
+  region: ap-south-1
+
+resources:
+- ${file(resources/sns.yml)}

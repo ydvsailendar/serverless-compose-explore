@@ -1,0 +1,8 @@
+Resources:
+  SNSTopic:
+    Type: AWS::SNS::Topic
+    Properties:
+      Subscription:
+        - Endpoint: ${param:queueArn}
+          Protocol: "sqs"
+      TopicName: "SQSNotification"
